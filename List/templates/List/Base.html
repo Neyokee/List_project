@@ -1,0 +1,15 @@
+{%load static%}
+
+<html>
+<head>
+    <title> Product List </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1> Shopping List </h1>
+    </p><button> <a href="{% url 'logout_url' %}"> Выйти из аккаунта </a></button></p>
+            {% block content %}
+            {% endblock %}
+</body>
+</html>

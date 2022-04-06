@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление продукта</title>
+</head>
+<body>
+    <h2>Добавление продукта</h2>
+    <form method="post">
+        {%csrf_token%}
+        {{add_product_list.as_p}}
+        <button type="submit">Добавить продукт</button>
+    </form>
+</body>
+</html>

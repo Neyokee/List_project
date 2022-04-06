@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <title>Добавление листа</title>
+</head>
+<body>
+    <h2> Добавление листа </h2>
+    <p></p><button> <a href="{% url 'main_listing' %}"> Главная </a></button></p>
+    <form method="post">
+        {%csrf_token%}
+        {{add_list_form.as_p}}
+        <button type="submit"> Добавить лист </button>
+        </form>
+</body>
+</html>

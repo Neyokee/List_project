@@ -1,0 +1,16 @@
+{% extends 'List/Base.html' %}
+{%load static%}
+
+
+    {% block content %}
+        <p><button> <a href="{% url 'main_listing' %}"> Главная </a></button></p>
+        <p><button><a href="{% url 'addproduct_url' %}"> Добавить продукт</a></button></p>
+        <div>
+            <p> Список покупок </p>
+                <p>
+                    {%for prod in products%}
+                    <p> {{prod.product_list}} | {{prod.product_count}}  шт <p>
+                    {%endfor%}
+                </p>
+        </div>
+    {% endblock%}

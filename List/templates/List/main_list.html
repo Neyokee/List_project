@@ -1,0 +1,16 @@
+{% extends 'List/Base.html' %}
+{%load static%}
+
+
+    {% block content %}
+
+        </p><button> <a href="{% url 'main_listing' %}"> Главная </a></button></p>
+        <p><button> <a href="{% url 'addlist_url' %}"> Добавить лист </a></button></p>
+        <div class = main_list>
+        {% for list in main_list%}
+        <li><a href="{% url 'products' pk=list.pk %}"> {{list.title}} </a>
+            <p>{{list.published_date}}</p>
+        </li>
+        {%endfor%}
+        </div>
+    {% endblock%}
