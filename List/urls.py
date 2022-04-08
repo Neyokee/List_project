@@ -11,7 +11,8 @@ urlpatterns = [
     path('addproduct', AddProductView.as_view(), name='addproduct_url'),
     path('register', UserFromView.as_view(), name = 'register_url'),
     path('login/', views.auth_view, name = 'login_url'),
-    path('logout', views.auth_logout, name ='logout_url')
+    path('logout', views.auth_logout, name ='logout_url'),
+    path('successful', views.successful, name = 'suc_url')
     # path('login', views.login_view(), name = 'login')
     # path('productsedit', ProductEditVies.as_view(), name = 'product_edit_url')
 

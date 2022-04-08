@@ -98,7 +98,7 @@ class UserFromView(View):
             username = user_form.cleaned_data['username']
             password = user_form.cleaned_data['password']
             User.objects.create_user(username=username, password=password)
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('successful')
 
         return render(request, 'List/register.html', context={'user_form': user_form})
 
@@ -118,3 +118,6 @@ class UserFromView(View):
 
 # class Authlogin(LoginView):
 #     template_name = 'List/login.html'
+
+def successful(request):
+    return render(request,'List/successful.html', {})

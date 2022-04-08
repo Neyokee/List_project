@@ -4,11 +4,13 @@
 
     {% block content %}
 
-        <p><button class="btn-main-page"> <a href="{% url 'main_listing' %}"> Main Page </a></button></p>
-        <p><button class="btn-addlist"> <a href="{% url 'addlist_url' %}"> Add List </a></button></p>
         <div class = main_list>
-        {% for list in main_list%}
-        <p><button class="listing"><a href="{% url 'products' pk=list.pk %}" class="listing"> {{list.title}} </a></button></p>
-        {%endfor%}
+
+            <p><button class="btn-main-page"> <a href="{% url 'main_listing' %}"> Main Page </a></button></p>
+            <p><button class="btn-addlist"> <a href="{% url 'addlist_url' %}"> Add List </a></button></p>
+            {% for list in main_list%}
+                <p><button class="listing"><a href="{% url 'products' pk=list.pk %}" class="listing"> {{list.title}}</a></button></p>
+            {%endfor%}
+                <p><button class="btn-logout"> <a href="{% url 'logout_url' %}"> Logout </a></button></p>
         </div>
     {% endblock %}

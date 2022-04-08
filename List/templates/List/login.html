@@ -6,7 +6,7 @@
         {{ login_form_auth.as_p}}
         <button class="btn-login" type="submit"> Log In </button>
     </form>
-    <h3>Not a member?</h3>
-    <p><button class="btn-reg"><a href="{% url 'register_url'%}"> Join Now </a></button></p>
+    <h3>Not a member? <a href="{% url 'register_url'%}"> Join Now </a> </h3>
+
 {% endblock %}
 
