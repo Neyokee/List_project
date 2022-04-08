@@ -5,20 +5,20 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 from django.core.exceptions import ValidationError
 
-class AddList(forms.ModelForm):
 
+class AddList(forms.ModelForm):
     class Meta:
         model = MainList
-        fields = '__all__'
+        fields = {'title', 'published_date'}
+
 
 class AddProduct(forms.ModelForm):
-
     class Meta:
         model = ListDetail
-        fields = '__all__'
+        fields = {'product_list','product_count'}
+
 
 class UserForm(forms.ModelForm):
-
     class Meta:
         model = User
         fields = {'username', 'password'}
@@ -28,6 +28,7 @@ class UserForm(forms.ModelForm):
     #     if len(password) < 3:
     #         raise ValidationError('Пароль должен быть длинне 3-х символов')
     #     return password
+
 
 class AuthForm(forms.Form):
     username = forms.CharField()

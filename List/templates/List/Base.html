@@ -4,12 +4,18 @@
 <head>
     <title> Product List </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<!--    {% if request.user.is_authenticated %}-->
+<!--        <meta http-equiv="refresh" content="0;{% url 'main_listing' %}">-->
+<!--    {%endif%}-->
 </head>
 <body>
-    <h1> Shopping List </h1>
-    </p><button> <a href="{% url 'logout_url' %}"> Выйти из аккаунта </a></button></p>
-            {% block content %}
-            {% endblock %}
+    <div>
+        <h1> Shopping List </h1>
+        <p><button class="btn-logout"> <a href="{% url 'logout_url' %}"> Logout </a></button></p>
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>
+

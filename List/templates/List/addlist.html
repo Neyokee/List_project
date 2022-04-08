@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-
-    <title>Добавление листа</title>
-</head>
-<body>
-    <h2> Добавление листа </h2>
-    <p></p><button> <a href="{% url 'main_listing' %}"> Главная </a></button></p>
+{% extends 'List/Base.html' %}
+{% block content %}
+    <h2> Add new list </h2>
+    </p><button class="btn-main-page"> <a href="{% url 'main_listing' %}"> Main Page </a></button>
     <form method="post">
         {%csrf_token%}
         {{add_list_form.as_p}}
-        <button type="submit"> Добавить лист </button>
+        <button class="btn-submit" type="submit"> Add List </button>
         </form>
-</body>
-</html>
+
+{% endblock %}

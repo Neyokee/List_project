@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Регистрация пользователя</title>
-</head>
-<body>
+{% extends 'List/Base.html' %}
+{% block content %}
     <h2>Регистрация пользователя</h2>
     <form method="post">
       {% csrf_token %}
       {{ user_form.as_p }}
       <button type="submit">Сохранить</button>
     </form>
-</body>
-</html>
+{% endblock %}
+

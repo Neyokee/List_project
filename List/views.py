@@ -11,6 +11,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 
 # Create your views here.
 
+
+
 def main_listing(request):
     current_user = request.user
     listing = MainList.objects.filter(log_user_id=current_user.id)
@@ -55,7 +57,9 @@ class AddListView(View):  # добавление листа с продукта�
     def post(self, request):
         add_list_form = AddList(request.POST)
         if add_list_form.is_valid():
-            MainList.objects.create(**add_list_form.cleaned_data)
+            title = add_list_form.cleaned_data['title']
+            date = add_list_form.cleaned_data['published_date']
+            MainList.objects.create(title= title, published_date= date, log_user_id= request.user)
             return HttpResponseRedirect('main_list')
 
         return render(request, 'List/addlist.html', context={"add_list_form": add_list_form})
@@ -70,7 +74,12 @@ class AddProductView(View):  # добавление продуктов в лис
     def post(self, request):
         add_product_list = AddProduct(request.POST)
         if add_product_list.is_valid():
-            ListDetail.objects.create(**add_product_list.cleaned_data)
+            product_list = add_product_list.cleaned_data['product_list']
+            product_count = add_product_list.cleaned_data['product_count']
+            print(request)
+            # rq = request.POST
+            # pk = rq.__getitem__('pk')
+            ListDetail.objects.create(product_list=product_list, product_count= product_count)
             # products = ListDetail.objects.filter(ID=pk)
             return HttpResponseRedirect('main_list')
 

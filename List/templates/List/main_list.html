@@ -4,13 +4,11 @@
 
     {% block content %}
 
-        </p><button> <a href="{% url 'main_listing' %}"> Главная </a></button></p>
-        <p><button> <a href="{% url 'addlist_url' %}"> Добавить лист </a></button></p>
+        <p><button class="btn-main-page"> <a href="{% url 'main_listing' %}"> Main Page </a></button></p>
+        <p><button class="btn-addlist"> <a href="{% url 'addlist_url' %}"> Add List </a></button></p>
         <div class = main_list>
         {% for list in main_list%}
-        <li><a href="{% url 'products' pk=list.pk %}"> {{list.title}} </a>
-            <p>{{list.published_date}}</p>
-        </li>
+        <p><button class="listing"><a href="{% url 'products' pk=list.pk %}" class="listing"> {{list.title}} </a></button></p>
         {%endfor%}
         </div>
-    {% endblock%}
+    {% endblock %}

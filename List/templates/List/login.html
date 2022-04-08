@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-    <h2>Страница входа</h2>
-    <form method="post">
+{% extends 'List/Base.html' %}
+{% block content %}
+    <h2>Log In</h2>
+    <form method="post" class="login-form">
         {%csrf_token%}
         {{ login_form_auth.as_p}}
-        <button type="submit"> Войти </button>
+        <button class="btn-login" type="submit"> Log In </button>
     </form>
-    <h3>Если вы ещё не зарегистрированы</h3>
-    <p><button><a href="{% url 'register_url'%}"> Регистрация </a></button></p>
-</body>
-</html>
+    <h3>Not a member?</h3>
+    <p><button class="btn-reg"><a href="{% url 'register_url'%}"> Join Now </a></button></p>
+{% endblock %}
+
