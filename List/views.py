@@ -99,6 +99,8 @@ class UserFromView(View):
             password = user_form.cleaned_data['password']
             User.objects.create_user(username=username, password=password)
             return HttpResponseRedirect('successful')
+        else:
+            user_form.add_error('__all__','Не правильно введён логин или пароль')
 
         return render(request, 'List/register.html', context={'user_form': user_form})
 

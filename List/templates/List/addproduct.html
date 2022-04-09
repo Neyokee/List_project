@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Добавление продукта</title>
-</head>
-<body>
-    <h2>Добавление продукта</h2>
+{% extends 'List/Base.html' %}
+{%load static%}
+
+{%block content%}
+        <h2>Product addition</h2>
     <form method="post">
         {%csrf_token%}
-        {{add_product_list.as_p}}
-        <button type="submit">Добавить продукт</button>
+        <p><label for="id_product_list">Продукт:</label>
+            <input type="text" name="product_list" maxlength="200" required="" id="id_product_list" placeholder="Product"></p>
+        <p><label for="id_product_count">Количество:</label>
+            <input type="number" name="product_count" required="" id="id_product_count" placeholder="Product Quantity"></p>
+        <button class="btn-submit" type="submit">Save</button>
     </form>
-</body>
-</html>
+
+{%endblock%}

@@ -3,13 +3,24 @@
 
 
     {% block content %}
+<div class="url-logo">
+    <a href="{% url 'main_listing' %}">
+        <img src="https://previews.dropbox.com/p/thumb/ABdE9DeZWRU6XCregdj2WAwUranWVNqzTWCfzVc08dLkBNY2SDCaHFS2SJZkjRJEDmEXGyh2dOEU838uypSS1QjEE3jiTiWqXAjVU0vKfVUOpiuF-LBP90cBl56LHd3WyCpt0ZP1fC4NN0JaF0jl9jB3rXxL2tkTUN1xTCRfkDrVdlqEVJwVpoeX525P4r0FlMwsH5ade_kfWr7sy_IaDS6GGmDHBao0gp2ki67aErDaEQpj4dQEHJ6ilF4o4gRUPbKTbHPQi2aM-oBIFgIcHiqdSQ67nmnS7ANZX0eLDyLs7YvJF6RBP1uS23ZKxVncqPptiA0UK4QzqTRbW-jIPmmbHwSTCmQBfzvA9pxq1w7SXQWxMTv-wIhebJHsDA1_wN0/p.png" width="45">
+    </a>
 
+    <a href="{% url 'addlist_url' %}">
+        <img src="https://previews.dropbox.com/p/thumb/ABeJBfwOToSGC2efW6MMBcJloZ7YthQLT626fmYrTxjZbq1QrbK6hUF_me2QX3-zvdyE5sZGHjd8hFI8TXP4VwapAYkax5_iuejH1uu5ZBxpSwCFhAuYqWTBZnw5N9hDd6T59e_Pmo-2zeV0LlJGIqYl4DDzDkYRdONJAF5judi3wEeMZkTBxZttDdemjI4nnC1ikjXTH4eSV4SfEntUSrTqIFqHknogb0LcKXIF2LDg4PJMZFGJhFGTOyScoFH_XHYj2PQrFCO34PfFLvZ1OrbtUiTPGhXZfvnue9OoAHAOCVuvttR4D6o1cEjprOD7Wooqi2zWAmMShjFCmfftCqEOtRyxwU_-uvCH01ZT5Ro8bmwOzkT4gaQ9aG_0lS9Xvjs/p.png" width="50">
+    </a>
+</div>
         <div class = main_list>
+            <h2>Product Sheets</h2>
 
-            <p><button class="btn-main-page"> <a href="{% url 'main_listing' %}"> Main Page </a></button></p>
-            <p><button class="btn-addlist"> <a href="{% url 'addlist_url' %}"> Add List </a></button></p>
+<!--            <p><button class="btn-main-page"> <a href="{% url 'main_listing' %}"> Main Page </a></button></p>-->
+
             {% for list in main_list%}
-                <p><button class="listing"><a href="{% url 'products' pk=list.pk %}" class="listing"> {{list.title}}</a></button></p>
+                <p><button class="listing">
+                    <a href="{% url 'products' pk=list.pk %}" class="listing"> {{list.title}}</a>
+                </button></p>
             {%endfor%}
                 <p><button class="btn-logout"> <a href="{% url 'logout_url' %}"> Logout </a></button></p>
         </div>

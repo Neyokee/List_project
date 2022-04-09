@@ -1,9 +1,15 @@
 {% extends 'List/Base.html' %}
 {% block content %}
     <h2>Log In</h2>
+<!--    {%if request.user.is_active == False %}-->
+<!--    <h2>User is not register</h2>-->
+<!--    {%endif%}-->
     <form method="post" class="login-form">
         {%csrf_token%}
-        {{ login_form_auth.as_p}}
+        <p><label for="id_username">Username:</label>
+            <input type="text" name="username" required="" id="id_username" placeholder="Username"></p>
+        <p><label for="id_password">Password:</label>
+            <input type="password" name="password" required="" id="id_password" placeholder="Password"></p>
         <button class="btn-login" type="submit"> Log In </button>
     </form>
     <h3>Not a member? <a href="{% url 'register_url'%}"> Join Now </a> </h3>

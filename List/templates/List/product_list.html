@@ -3,10 +3,14 @@
 
 
     {% block content %}
-        <p><button class="btn-main-page" > <a href="{% url 'main_listing' %}"> Main Page </a></button></p>
-        <p><button><a href="{% url 'addproduct_url' %}"> Add Products </a></button></p>
+           <a href="{% url 'main_listing' %}">
+        <img src="https://previews.dropbox.com/p/thumb/ABdE9DeZWRU6XCregdj2WAwUranWVNqzTWCfzVc08dLkBNY2SDCaHFS2SJZkjRJEDmEXGyh2dOEU838uypSS1QjEE3jiTiWqXAjVU0vKfVUOpiuF-LBP90cBl56LHd3WyCpt0ZP1fC4NN0JaF0jl9jB3rXxL2tkTUN1xTCRfkDrVdlqEVJwVpoeX525P4r0FlMwsH5ade_kfWr7sy_IaDS6GGmDHBao0gp2ki67aErDaEQpj4dQEHJ6ilF4o4gRUPbKTbHPQi2aM-oBIFgIcHiqdSQ67nmnS7ANZX0eLDyLs7YvJF6RBP1uS23ZKxVncqPptiA0UK4QzqTRbW-jIPmmbHwSTCmQBfzvA9pxq1w7SXQWxMTv-wIhebJHsDA1_wN0/p.png" width="45">
+    </a>
+        <a href="{% url 'addproduct_url' %}">
+            <img src="https://previews.dropbox.com/p/thumb/ABc2FMtCneU7gLdbIMrnH9UBjmEe7WFwQvrRiYZB1-alnYpBHJo_k2pLUJGYPiGOo0qky8_UOafijrq6mCXBBO3Y5Nd52EBmqwD3AABOEfUIEIH0eUBlpwVJTXsv02-TcAzvbTj9WlNodVnK9es94UNjvW-itYpSe7Hj84f-X4cwPwQl5tjBF1TDCVCJb0DOKC0XHbzSg2ZyFVVQQuas1OR0CdR-Nf5J0Fy3ns6D5jRpatuf_8CkGR_SmyZn8FEaPM9k0udQCmFQQKrSeHBL8cGI4JknC7M9P3M1xnDcw0vR0Cv5rys6wTNg5z1EInZarXDjsOGkm1bYPmKoCvfM1lO3WvKOFgEl28Q0dYkQ2F8hBCzHs0qw6kKfHjilDOVRfFw/p.png" width="50">
+        </a>
         <div>
-            <p> Список покупок </p>
+            <h2> Grocery List </h2>
                 <p>
                     {%for prod in products%}
                     <p> {{prod.product_list}} | {{prod.product_count}}  шт <p>
@@ -14,3 +18,4 @@
                 </p>
         </div>
     {% endblock%}
+

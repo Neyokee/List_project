@@ -1,11 +1,14 @@
 {% extends 'List/Base.html' %}
 {% block content %}
+    <a href="{% url 'main_listing' %}">
+        <img src="https://previews.dropbox.com/p/thumb/ABdE9DeZWRU6XCregdj2WAwUranWVNqzTWCfzVc08dLkBNY2SDCaHFS2SJZkjRJEDmEXGyh2dOEU838uypSS1QjEE3jiTiWqXAjVU0vKfVUOpiuF-LBP90cBl56LHd3WyCpt0ZP1fC4NN0JaF0jl9jB3rXxL2tkTUN1xTCRfkDrVdlqEVJwVpoeX525P4r0FlMwsH5ade_kfWr7sy_IaDS6GGmDHBao0gp2ki67aErDaEQpj4dQEHJ6ilF4o4gRUPbKTbHPQi2aM-oBIFgIcHiqdSQ67nmnS7ANZX0eLDyLs7YvJF6RBP1uS23ZKxVncqPptiA0UK4QzqTRbW-jIPmmbHwSTCmQBfzvA9pxq1w7SXQWxMTv-wIhebJHsDA1_wN0/p.png" width="45">
+    </a>
     <h2> Add new list </h2>
-    </p><button class="btn-main-page"> <a href="{% url 'main_listing' %}"> Main Page </a></button>
     <form method="post">
         {%csrf_token%}
-        {{add_list_form.as_p}}
-        <button class="btn-submit" type="submit"> Add List </button>
+        <p><label for="id_title">Название листа:</label> <input type="text" name="title" value="DASDADA" maxlength="100" required="" id="id_title" placeholder="List name"></p>
+        <p><label for="id_published_date">Дата создания:</label> <input type="text" name="published_date" required="" id="id_published_date"><input type="hidden" name="initial-published_date" id="initial-id_published_date" placeholder="Publish date"></p>
+        <button class="btn-submit" type="submit"> Save </button>
         </form>
 
 {% endblock %}
