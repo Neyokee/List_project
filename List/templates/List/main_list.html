@@ -18,7 +18,7 @@
 <!--            <p><button class="btn-main-page"> <a href="{% url 'main_listing' %}"> Main Page </a></button></p>-->
 
             {% for list in main_list%}
-                <p><button class="listing">
+                    <p><button class="listing">
                     <a href="{% url 'products' pk=list.pk %}" class="listing"> {{list.title}}</a>
                 </button></p>
             {%endfor%}
