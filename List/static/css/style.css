@@ -1,9 +1,10 @@
 body {
 
-    font-size:20px;
-    position:absolute;
-    top: 15%;
-    padding-left: 60%;
+    position: absolute;
+    width: 352px;
+    height: 556px;
+    left: 1247px;
+    top: 288px;
     font-family: 'League Gothic', sans-serif;
     font-family: 'Poppins', sans-serif;
 
@@ -15,7 +16,7 @@ h4 {
 }
 
 h3 {
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
     color: #787878;
 }
@@ -32,6 +33,7 @@ h2 {
     border-radius: 30px;
     outline:NONE !important;
     outline-width:0px;
+    outline-color: white;
 
 
 }
